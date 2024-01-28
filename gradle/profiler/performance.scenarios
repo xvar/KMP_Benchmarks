@@ -1,0 +1,8 @@
+clean_build {
+    tasks = [":androidApp:assembleDebug"]
+    cleanup-tasks = ["clean"]
+    gradle-args = ["--rerun-tasks", "--no-build-cache", "--no-configuration-cache"]
+
+    warm-ups = 2
+    iterations = 5
+}
