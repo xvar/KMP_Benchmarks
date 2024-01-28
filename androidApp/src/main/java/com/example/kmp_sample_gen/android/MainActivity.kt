@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.kmp_sample_gen.Greeting
-import com.example.kmp_sample_gen.GreetingView
+import com.example.kpm_sample_gen.GreetingView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
