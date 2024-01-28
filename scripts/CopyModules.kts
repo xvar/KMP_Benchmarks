@@ -6,7 +6,7 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardCopyOption
 
-val maxLine = 10
+val maxLine = 500
 
 fun copyAndRenameModule(sourcePath: Path, destinationPath: Path, moduleNumber: Int) {
     // Copy the entire directory to the new location
