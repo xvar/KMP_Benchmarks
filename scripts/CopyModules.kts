@@ -10,7 +10,7 @@ val maxLine = 500
 
 fun copyAndRenameModule(sourcePath: Path, destinationPath: Path, moduleNumber: Int) {
     // Copy the entire directory to the new location
-    Files.walk(sourcePath, FileVisitOption.FOLLOW_LINKS).forEach { source ->
+    Files.walk(sourcePath, ``FileVisitOption.FOLLOW_LINKS).forEach { source ->
         val destination = destinationPath.resolve(sourcePath.relativize(source))
         Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING)
     }
