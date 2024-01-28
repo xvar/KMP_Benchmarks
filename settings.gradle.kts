@@ -22,3 +22,4 @@ rootProject.name = "KMP-Sample-Gen"
 include(":androidApp")
 include(":shared")
 include(":compose-modules:only-compose-module-0")
+
