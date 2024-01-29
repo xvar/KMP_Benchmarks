@@ -2,7 +2,7 @@
 
 import java.io.File
 
-val maxLine = 10
+val maxLine = 500
 val composableFile = File("androidApp/src/main/java/com/example/kmp_sample_gen/android/MainActivity.kt")
 val existingContent = composableFile.readText()
 

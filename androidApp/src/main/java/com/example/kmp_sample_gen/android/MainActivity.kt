@@ -10,7 +10,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.ui.Modifier
 import com.example.kmp_sample_gen.Greeting
-import com.example.kmp_sample_gen.GreetingView0
+import com.example.kmp_sample_gen.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
