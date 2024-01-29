@@ -2,7 +2,7 @@
 
 import java.io.File
 
-val maxLine = 500
+val maxLine = 10
 val depsFile = File("androidApp/build.gradle.kts")
 val existingContent = depsFile.readText()
 

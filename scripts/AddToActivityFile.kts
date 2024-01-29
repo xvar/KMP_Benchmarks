@@ -2,18 +2,17 @@
 
 import java.io.File
 
-val maxLine = 500
+val maxLine = 10
 val composableFile = File("androidApp/src/main/java/com/example/kmp_sample_gen/android/MainActivity.kt")
 val existingContent = composableFile.readText()
 
-// Find and modify the line containing "GreetingView0(text)"
-val modifiedContent = existingContent.replace("GreetingView0(text)", generateGreetingViewLines())
+val modifiedContent = existingContent.replace("GreetingView(Greeting().greet())", generateGreetingViewLines())
 
 composableFile.writeText(modifiedContent)
 
 fun generateGreetingViewLines(): String {
     val greetingViewLines = (1..maxLine).joinToString("\n") { number ->
-        "                        GreetingView$number(text)"
+        "                        GreetingView(Greeting$number().greet())"
     }
-    return "GreetingView0(text)\n$greetingViewLines\n"
+    return "GreetingView(Greeting().greet())\n$greetingViewLines\n"
 }

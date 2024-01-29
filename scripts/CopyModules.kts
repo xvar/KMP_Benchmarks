@@ -6,7 +6,7 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardCopyOption
 
-val maxLine = 500
+val maxLine = 10
 
 fun copyAndRenameModule(sourcePath: Path, destinationPath: Path, moduleNumber: Int) {
     // Copy the entire directory to the new location
@@ -14,7 +14,7 @@ fun copyAndRenameModule(sourcePath: Path, destinationPath: Path, moduleNumber: I
         val destination = destinationPath.resolve(sourcePath.relativize(source))
         val path = source.toString()
         val contains = when {
-            path.endsWith("src") || path.contains("Composable") || path.contains("build.gradle.kts") ||
+            path.endsWith("src") || path.contains("Greeting") || path.contains("build.gradle.kts") ||
             path.endsWith("commonMain") -> true
             path.contains("commonMain") &&
                 (path.endsWith("kotlin") || path.endsWith("com") || path.endsWith("example")
@@ -28,10 +28,10 @@ fun copyAndRenameModule(sourcePath: Path, destinationPath: Path, moduleNumber: I
     }
 
     // Update the function name in ComposableShared.kt
-    val composableFile = destinationPath.resolve("src/commonMain/kotlin/com/example/kmp_sample_gen/ComposableShared.kt")
-    composableFile.toFile().writeText(composableFile.toFile().readText().replace("GreetingView0", "GreetingView$moduleNumber"))
+    val composableFile = destinationPath.resolve("src/commonMain/kotlin/com/example/kmp_sample_gen/Greeting.kt")
+    composableFile.toFile().writeText(composableFile.toFile().readText().replace("Greeting", "Greeting$moduleNumber"))
 
-    val newComposableFile = destinationPath.resolve("src/commonMain/kotlin/com/example/kmp_sample_gen/ComposableShared$moduleNumber.kt")
+    val newComposableFile = destinationPath.resolve("src/commonMain/kotlin/com/example/kmp_sample_gen/Greeting$moduleNumber.kt")
     composableFile.toFile().renameTo(newComposableFile.toFile())
 }
 
