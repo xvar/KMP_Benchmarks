@@ -7,7 +7,8 @@ pluginManagement {
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
     plugins {
-        id("org.jetbrains.compose").version("1.5.4") //see libs.yml, just for sample
+        kotlin("multiplatform").version("1.9.21")
+        id("org.jetbrains.compose").version("1.5.11") //see libs.yml, just for sample
     }
 }
 
@@ -21,5 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "KMP-Sample-Gen"
 include(":androidApp")
 include(":shared")
-include(":compose-modules:only-compose-module-0")
 
