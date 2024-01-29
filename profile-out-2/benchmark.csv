@@ -1,0 +1,11 @@
+scenario,clean_build,clean_build
+version,Gradle 8.2,Gradle 8.2
+tasks,:androidApp:assembleDebug,:androidApp:assembleDebug
+value,total execution time,garbage collection time
+warm-up build #1,75875.02,2786.00
+warm-up build #2,60384.38,3392.00
+measured build #1,54916.95,2908.00
+measured build #2,58995.91,3291.00
+measured build #3,61338.06,3759.00
+measured build #4,50647.80,3038.00
+measured build #5,49856.87,2315.00
